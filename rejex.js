@@ -1,23 +1,11 @@
-// 12-3456-7890123-001 bank structure
-// 123-456-789 ird structure
+function IRDNumber() {
+  // ird number must be 9 char (12 if including dashes)
+  // every 3rd number must auto insert a dash
+  // warning notice above the input to tell u if your ird numver is 8 not 9 char, you must start/padd your number with 0
+}
 
-document
-  .getElementById('validationForm')
-  .addEventListener('submit', function (e) {
-    e.preventDefault()
-
-    const bankInput = document.getElementById('bankInput').value.trim()
-    const irdInput = document.getElementById('irdInput').value.trim()
-
-    const bankRegex = /^\d{2}-\d{4}-\d{7}-\d{3}$/
-    const irdRegex = /^\d{3}-\d{3}-\d{3}$/
-
-    const bankValid = bankRegex.test(bankInput)
-    const irdValid = irdRegex.test(irdInput)
-
-    const results = document.getElementById('results')
-    results.innerHTML = `
-    Bank Account: ${bankValid ? '✅ Valid' : '❌ Invalid'}<br>
-    IRD Number: ${irdValid ? '✅ Valid' : '❌ Invalid'}
-  `
-  })
+function BankNumber() {
+  // must take 16 digits
+  // pattern is XX-XXXX-XXXXXXX-XX(X)
+  // if only 15 digits then auto fill 0 on last digit
+}
