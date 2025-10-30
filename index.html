@@ -4,34 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NZ IRD Number Validator</title>
+  <title>NZ IRD & Bank Validator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="container">
-    <h1>NZ IRD Number Validator</h1>
+    <h1>NZ Validator</h1>
 
-    <label for="ird">Enter IRD Number:</label>
-    <input type="text" id="ird" placeholder="e.g. 123-456-789 or 12345678" />
+    <!-- IRD -->
+    <div class="section">
+      <h2>IRD Number</h2>
+      <label for="ird">Enter IRD Number:</label>
+      <input type="text" id="ird" placeholder="e.g. 136410133" />
+      <button onclick="validateIRD()">Validate IRD</button>
+      <div id="ird-result" class="result"></div>
+    </div>
 
-    <button onclick="validateIRD()">Validate</button>
-
-    <div id="result"></div>
+    <!-- Bank -->
+    <div class="section">
+      <h2>Bank Account</h2>
+      <label for="bank">Enter Bank Account:</label>
+      <input type="text" id="bank" placeholder="e.g. 03-0658-1234567-03" />
+      <button onclick="validateBank()">Validate Bank</button>
+      <div id="bank-result" class="result"></div>
+    </div>
 
     <div class="examples">
-      <p><strong>Test Examples:</strong></p>
+      <p><strong>Known-good examples (copy-paste):</strong></p>
       <ul>
-        <li>Valid: <code>136410133</code> (real test number)</li>
-        <li>Valid: <code>49091850</code> (8-digit)</li>
-        <li>Valid: <code>123-456-789</code> (if checksum passes)</li>
-        <li>Invalid: <code>00000000</code>, <code>1234567</code>, <code>abc</code></li>
+        <li>IRD: <code>136410133</code> (9-digit), <code>49091850</code> (8-digit)</li>
+        <li>Bank: <code>03-0658-1234567-03</code> (BNZ), <code>02-1234-5678901-00</code> (ASB)</li>
       </ul>
     </div>
   </div>
-  <script src="rejex.js"></script>
 
+  <script src="ird.js"></script>
+  <script src="bank.js"></script>
 </body>
 
 </html>

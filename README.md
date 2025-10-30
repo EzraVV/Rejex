@@ -11,3 +11,5 @@ this is a small function/program to take the input of bank account numbers and i
 * will only allow numbers
 * will auto separate with '-' when required 
 * will allow the correct amount of numbers
+
+as i am still learning i have used AI in the help on this project. 
